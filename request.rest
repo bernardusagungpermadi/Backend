@@ -1,0 +1,141 @@
+//create user
+POST  http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "Permadi",
+    "email": "admin1@gmail.com",
+    "password": "123456",
+    "confPassword":"123456",
+    "role": "admin"
+}
+
+###
+//get All Users
+
+GET http://localhost:5000/users
+
+###
+//get Single User
+GET http://localhost:5000/users/ebe7d138-ed05-4de4-9333-3e76cfd2f938
+
+###
+//update User
+PATCH   http://localhost:5000/users/ebe7d138-ed05-4de4-9333-3e76cfd2f938
+Content-Type: application/json
+
+{
+    "name": "John Updated",
+    "email": "admin@gmail.com",
+    "password": "",
+    "confPassword":"",
+    "role": "admin"
+}
+
+###
+//delete user
+DELETE    http://localhost:5000/users/ebe7d138-ed05-4de4-9333-3e76cfd2f938
+
+###
+//login User
+POST  http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "Johndoe@gmail.com",
+    "password": "123456"
+}
+
+###
+POST  http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "123456"
+}
+
+###
+GET   http://localhost:5000/me
+
+###
+DELETE    http://localhost:5000/logout
+
+
+/
+/// Request Category
+###
+POST http://localhost:5000/categories
+Content-Type: application/json
+
+{
+  "name": "KDRT"
+}
+
+### 
+GET http://localhost:5000/categories
+
+###
+PUT http://localhost:5000/categories/:id
+Content-Type: application/json
+
+{
+  "name": "Pernikahan"
+}
+
+###
+DELETE http://localhost:5000/categories/3
+
+
+
+
+
+/// POST
+
+###
+POST http://localhost:5000/posts
+Content-Type: application/json
+
+{
+  "title": "Olahraga Ibu Hamil update",
+  "body": "Isi dari postingan",
+  "thumbnail": "http://localhost:5000/uploads/thumbnail-1685350364666-546186918.png",
+  "link": "",
+  "categoryId": 2,
+  "userId": 1,
+  "like":1
+}
+###
+PUT http://localhost:5000/posts/5
+Content-Type: application/json
+
+{
+  "title": "Olahraga Ibu Hamil update",
+  "body": "Isi dari postingan",
+  "thumbnail": "http://localhost:5000/uploads/thumbnail-1685350364666-546186918.png",
+  "categoryId": 2,
+  "userId": 1
+}
+
+###
+GET http://localhost:5000/posts/5
+
+###
+DELETE http://localhost:5000/posts/3
+
+
+
+///ARTIKEL
+###
+POST http://localhost:5000/artikel
+Content-Type: application/json
+
+{
+  "judul": "Pengaruh Tirta dalam Pengerjaan Skripsi",
+  "konten": "Ini adalah konten",
+  "tanggalPublikasi": "2023-05-12",
+  "gambar": "mlogo.png",
+  "categoryId": 1
+}
+
+###
